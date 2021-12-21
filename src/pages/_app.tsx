@@ -18,8 +18,8 @@ function IndexPage() {
 
         <div className="dark:bg-gray-900 dark:text-gray-300 min-h-screen">
           <TopMenu />
-          <main className="py-6 px-4 sm:p-6 md:py-10 md:px-8">
-            <div  className="max-w-4xl mx-auto lg:max-w-5xl lg:gap-x-20 lg:grid-cols-2">
+          <main className="px-2 md:px-2">
+            <div  className="mx-auto lg:gap-x-20 lg:grid-cols-2">
               <MainPage />
             </div>
           </main>

@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "express": "^4.17.2",
     "next": "^12.0.7",
     "react": "^17.0.2",
