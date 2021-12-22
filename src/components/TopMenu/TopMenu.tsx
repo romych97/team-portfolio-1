@@ -3,7 +3,7 @@ function TopMenu() {
         <div>
            {/* <!-- This example requires Tailwind CSS v2.0+ --> */}
 <nav className="bg-gray-800 opacity-95 fixed w-full z-50">
-  <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+  <div className=" mx-auto px-2 sm:px-6 lg:px-8">
     <div className="relative flex items-center justify-between h-16">
       <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
         {/* <!-- Mobile menu button--> */}
@@ -40,13 +40,13 @@ function TopMenu() {
         <div className="hidden sm:block sm:ml-6">
           <div className="flex space-x-4">
             {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-            <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+            <a href="#" className="px-3 py-2  text-gray-300 hover:text-white rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
 
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+            <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
 
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+            <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
 
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+            <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
           </div>
         </div>
       </div>

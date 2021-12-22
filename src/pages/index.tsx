@@ -1,5 +1,5 @@
 
-import '../styles/main.scss'
+// import '../styles/main.scss'
 
 import MainPage from '../components/MainPage/MainPage'
 import TopMenu from '../components/TopMenu/TopMenu'
