@@ -31,7 +31,7 @@ function MainPage() {
 
             {/* max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 */}
 
-            <section className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen flex items-center">
+            <section className="min-h-screen">
                 <About executeScroll={ executeScroll } />
             </section>
             
