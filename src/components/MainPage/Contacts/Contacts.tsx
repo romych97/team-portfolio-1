@@ -1,31 +1,21 @@
 // import 'animate.css';
-import TagCloud from '../../../Modules/TagCloud'
 
-function Skills() {
-
-    const myTags = [
-        'JavaScript', 'CSS', 'HTML',
-        'Angualr', 'VueJS', 'React',
-        'Python', 'Go', 'Chrome',
-        'Edge', 'Firefox', 'Safari',
-  ];
-
-
+function Contacts() {
     return (
-        <div className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen">
-            <div >
+        <div className="z-30 flex max-w-container  min-h-screen">
+            <div className="flex-1 mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16">
                 <div className="mb-3">
                     <div>
                         <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
-                            <span className="textD hover:text-blue-300">O</span>
-                            <span className="textD hover:text-blue-300">u</span>
-                            <span className="textD hover:text-blue-300">r</span>
+                            <span className="textD hover:text-blue-300">C</span>
+                            <span className="textD hover:text-blue-300">o</span>
+                            <span className="textD hover:text-blue-300">n</span>
+                            <span className="textD hover:text-blue-300">t</span>
+                            <span className="textD hover:text-blue-300">a</span>
+                            <span className="textD hover:text-blue-300">c</span>
+                            <span className="textD hover:text-blue-300">t</span>
                                 &nbsp;
-                            <span className="textD hover:text-blue-300">S</span>
-                            <span className="textD hover:text-blue-300">k</span>
-                            <span className="textD hover:text-blue-300">i</span>
-                            <span className="textD hover:text-blue-300">l</span>
-                            <span className="textD hover:text-blue-300">l</span>
+                            <span className="textD hover:text-blue-300">U</span>
                             <span className="textD hover:text-blue-300">s</span>
                         </h2>
     
@@ -43,21 +33,16 @@ function Skills() {
                         </div>
                         <div className="mb-10">
                             <button className=" mr-2 text-gray-100 inline-flex items-center h-10 px-10 transition-colors duration-150 bg-blue-800 rounded-sm focus:shadow-outline hover:bg-blue-700">
-                                <span>See more!</span>
-                            </button>
-                            <button className=" text-gray-100 inline-flex items-center h-10 px-5 transition-colors duration-150 bg-gray-800 rounded-sm focus:shadow-outline hover:bg-gray-700">
-                                <span>See our skills</span>
+                                <span>Send message</span>
                             </button>
                         </div>
                     </div>
-                    <div className="w-50 flex-1">
-                        <TagCloud />
-                    </div>
                 </div>
             </div>
+            <div className="flex-1" style={{ backgroundImage: 'url(https://jacekjeznach.com/wp-content/themes/new/img/map.png)' }} className="w-50 flex-1">2</div>
 
         </div>
     )
 }
 
-export default Skills
+export default Contacts

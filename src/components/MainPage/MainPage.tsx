@@ -2,7 +2,9 @@
 import React, { useRef } from 'react'
 
 import About from './About/About'
+import Contacts from './Contacts/Contacts'
 import Portfolio from './Portfolio/Portfolio'
+import Reviews from './Reviews/Reviews'
 import Skills from './Skills/Skills'
 
 const scrollToRef = (ref) => {
@@ -41,6 +43,14 @@ function MainPage() {
             
             <section className="min-h-screen">
                 <Skills />
+            </section>
+            
+            <section className="min-h-screen">
+                <Reviews />
+            </section>
+            
+            <section className="min-h-screen">
+                <Contacts />
             </section>
 
         </div>

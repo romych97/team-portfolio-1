@@ -12,7 +12,7 @@ function About(props:any) {
             <div>
                 <div className="flex mb-3">
                     <div>
-                        <h1 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
+                        <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
                             <span className="textD hover:text-blue-300">A</span>
                             <span className="textD hover:text-blue-300">g</span>
                             <span className="textD hover:text-blue-300">e</span>
@@ -24,7 +24,7 @@ function About(props:any) {
                             <span className="textD hover:text-blue-300">a</span>
                             <span className="textD hover:text-blue-300">m</span>
                             <span className="textD hover:text-blue-300">e</span>
-                        </h1>
+                        </h2>
     
                     </div>
                     {/* <div className="animate__animated animate__flash animate__infinite animate__slower">
