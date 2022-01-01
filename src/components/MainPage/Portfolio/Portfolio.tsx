@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+import dynamic from 'next/dynamic'
+const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then(mod => mod.AnimationOnScroll),
+    { ssr: false }
+) 
+
+
 function Portfolio() {
 
     const [ portfolioItems, setPortfolioItems ] = useState([
@@ -57,36 +63,31 @@ function Portfolio() {
         <img key={article.name} src={article.img} />
     ));
 
-    const CustomDot = ({ index, onClick, active }) => {
-        return (
-          <button onClick={ e => { onClick(); e.preventDefault(); }}
-                  className={ "w-20 h-20 mx-1 " + (active ? "border" : '')} >
-            { React.Children.toArray(images)[index] }
-          </button>
-        );
-      };
-
     return (
         <div  className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen">
             <div>
                 <div className="flex mb-3 ">
+                    
                     <div>
-                        <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
-                            <span className="textD hover:text-blue-300">O</span>
-                            <span className="textD hover:text-blue-300">u</span>
-                            <span className="textD hover:text-blue-300">r</span>
-                                &nbsp;
-                            <span className="textD hover:text-blue-300">P</span>
-                            <span className="textD hover:text-blue-300">o</span>
-                            <span className="textD hover:text-blue-300">r</span>
-                            <span className="textD hover:text-blue-300">t</span>
-                            <span className="textD hover:text-blue-300">f</span>
-                            <span className="textD hover:text-blue-300">o</span>
-                            <span className="textD hover:text-blue-300">l</span>
-                            <span className="textD hover:text-blue-300">i</span>
-                            <span className="textD hover:text-blue-300">o</span>
-                        </h2>
-    
+                    <AnimationOnScroll delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
+                        <div data-aos="fade-right">
+                            <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
+                                <span className="textD hover:text-blue-300">O</span>
+                                <span className="textD hover:text-blue-300">u</span>
+                                <span className="textD hover:text-blue-300">r</span>
+                                    &nbsp;
+                                <span className="textD hover:text-blue-300">P</span>
+                                <span className="textD hover:text-blue-300">o</span>
+                                <span className="textD hover:text-blue-300">r</span>
+                                <span className="textD hover:text-blue-300">t</span>
+                                <span className="textD hover:text-blue-300">f</span>
+                                <span className="textD hover:text-blue-300">o</span>
+                                <span className="textD hover:text-blue-300">l</span>
+                                <span className="textD hover:text-blue-300">i</span>
+                                <span className="textD hover:text-blue-300">o</span>
+                            </h2>
+                        </div>
+                        </AnimationOnScroll>
                     </div>
                     {/* <div className="animate__animated animate__flash animate__infinite animate__slower">
                         <div className="w-6 h-6 flex-shrink-0 flex items-center">

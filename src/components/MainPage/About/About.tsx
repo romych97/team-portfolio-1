@@ -1,6 +1,11 @@
 import 'animate.css';
 import { useEffect } from 'react';
 
+import dynamic from 'next/dynamic'
+const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then(mod => mod.AnimationOnScroll),
+    { ssr: false }
+) 
+
 function About(props:any) {
 
     // useEffect(() => {
@@ -12,20 +17,23 @@ function About(props:any) {
             <div>
                 <div className="flex mb-3">
                     <div>
-                        <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
-                            <span className="textD hover:text-blue-300">A</span>
-                            <span className="textD hover:text-blue-300">g</span>
-                            <span className="textD hover:text-blue-300">e</span>
-                            <span className="textD hover:text-blue-300">n</span>
-                            <span className="textD hover:text-blue-300">c</span>
-                            <span className="textD hover:text-blue-300">y</span>
-                                &nbsp;
-                            <span className="textD hover:text-blue-300">N</span>
-                            <span className="textD hover:text-blue-300">a</span>
-                            <span className="textD hover:text-blue-300">m</span>
-                            <span className="textD hover:text-blue-300">e</span>
-                        </h2>
-    
+                        <AnimationOnScroll delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
+                            <div data-aos="fade-right" >
+                                <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
+                                    <span className="textD hover:text-blue-300">A</span>
+                                    <span className="textD hover:text-blue-300">g</span>
+                                    <span className="textD hover:text-blue-300">e</span>
+                                    <span className="textD hover:text-blue-300">n</span>
+                                    <span className="textD hover:text-blue-300">c</span>
+                                    <span className="textD hover:text-blue-300">y</span>
+                                        &nbsp;
+                                    <span className="textD hover:text-blue-300">N</span>
+                                    <span className="textD hover:text-blue-300">a</span>
+                                    <span className="textD hover:text-blue-300">m</span>
+                                    <span className="textD hover:text-blue-300">e</span>
+                                </h2>
+                            </div>
+                        </AnimationOnScroll>
                     </div>
                     {/* <div className="animate__animated animate__flash animate__infinite animate__slower">
                         <div className="w-6 h-6 flex-shrink-0 flex items-center">

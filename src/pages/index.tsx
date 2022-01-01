@@ -1,12 +1,15 @@
 
 // import '../styles/main.scss'
 
+import React, { useEffect } from 'react';
+
 import MainPage from '../components/MainPage/MainPage'
 import TopMenu from '../components/TopMenu/TopMenu'
 
 function IndexPage() {
+  
     return (
-      <div className="dark">
+      <div className="dark" >
 
         {/* Switch theme example */}
         {/* <div className="bg-gray-900 dark:bg-gray-900 dark:text-gray-100">
