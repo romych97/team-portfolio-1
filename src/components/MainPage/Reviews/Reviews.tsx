@@ -10,7 +10,7 @@ function Skills() {
             <div >
                 <div className="mb-3">
                     <div>
-                    <AnimationOnScroll delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
+                    <AnimationOnScroll offset={ 0 } delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
                         <div data-aos="fade-right" >
                             <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
                                 <span className="textD hover:text-blue-300">R</span>

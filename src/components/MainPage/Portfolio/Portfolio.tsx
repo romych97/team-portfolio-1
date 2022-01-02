@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import dynamic from 'next/dynamic'
 const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then(mod => mod.AnimationOnScroll),
     { ssr: false }
 ) 
 
+import { useInView } from 'react-intersection-observer'; 
+import CountUp from 'react-countup';
 
 function Portfolio() {
+
+    const [projectsCounter, setProjectsCounter] = useState(0)
 
     const [ portfolioItems, setPortfolioItems ] = useState([
         { 
@@ -63,14 +67,23 @@ function Portfolio() {
         <img key={article.name} src={article.img} />
     ));
 
+    const { ref, inView, entry } = useInView({});
+
+    useEffect(() => {
+        if (inView) {
+            setProjectsCounter(360);
+        }
+    }, [inView])
+
     return (
         <div  className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen">
-            <div>
+            <div ref={ ref }>
                 <div className="flex mb-3 ">
                     
                     <div>
-                    <AnimationOnScroll delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
-                        <div data-aos="fade-right">
+                    <AnimationOnScroll offset={ 0 } delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
+                        {/* <div className="animated fadeInLeft">   */}
+                        <div className="">  
                             <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
                                 <span className="textD hover:text-blue-300">O</span>
                                 <span className="textD hover:text-blue-300">u</span>
@@ -117,7 +130,8 @@ function Portfolio() {
                     <div className="w-50 flex-1">
                         <div>Project for clients from EU and US</div>
                         <div>
-                            <h3 className="text-5xl threed-text">360</h3>
+                            <CountUp start={ 0 } end={ projectsCounter } duration={ 3 } 
+                                     useEasing={ true } />
                         </div>
                     </div>
                 </div>

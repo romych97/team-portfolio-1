@@ -13,7 +13,7 @@ const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then
 
 function Skills() {
     
-    const myTags = [
+    const tags = [
         'JavaScript', 'CSS', 'HTML',
         'Angualr', 'VueJS', 'React',
         'Python', 'Go', 'Chrome',
@@ -50,26 +50,26 @@ function Skills() {
 
     return (
         <div className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen">
-            <div ref={ref}>
+            <div ref={ ref }>
             <div className="flex">
                 <div className="flex-1">
                     <div className="mb-3">
                         <div>
-                        <AnimationOnScroll delay={0} animateOnce={true} animateIn="animate__bounceInLeft">
-                            <div data-aos="fade-right">
-                                <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium animate__animated animate__fadeIn animate__slower">
-                                    <span className="textD hover:text-blue-300">O</span>
-                                    <span className="textD hover:text-blue-300">u</span>
-                                    <span className="textD hover:text-blue-300">r</span>
-                                        &nbsp; 
-                                    <span className="textD hover:text-blue-300">S</span>
-                                    <span className="textD hover:text-blue-300">k</span>
-                                    <span className="textD hover:text-blue-300">i</span>
-                                    <span className="textD hover:text-blue-300">l</span>
-                                    <span className="textD hover:text-blue-300">l</span>
-                                    <span className="textD hover:text-blue-300">s</span>
-                                </h2>
-                            </div>
+                            <AnimationOnScroll offset={ 0 } delay={ 0 } animateOnce={true} animateIn="animate__bounceInLeft">
+                                <div>
+                                    <h2 className="cursor-default text-4xl sm:text-5xl md:text-7xl font-medium text-gray-200 mb-0 threed-text font-medium">
+                                        <span className="textD hover:text-blue-300">O</span>
+                                        <span className="textD hover:text-blue-300">u</span>
+                                        <span className="textD hover:text-blue-300">r</span>
+                                            &nbsp; 
+                                        <span className="textD hover:text-blue-300">S</span>
+                                        <span className="textD hover:text-blue-300">k</span>
+                                        <span className="textD hover:text-blue-300">i</span>
+                                        <span className="textD hover:text-blue-300">l</span>
+                                        <span className="textD hover:text-blue-300">l</span>
+                                        <span className="textD hover:text-blue-300">s</span>
+                                    </h2>
+                                </div>
                             </AnimationOnScroll>
                         </div>
                     </div>
@@ -84,68 +84,20 @@ function Skills() {
                                 </div>
                             </div>
                             <div className="mb-10">
-                                <div className="mb-3">
-                                    <div className="flex justify-between mb-1">
-                                        <span className="text-base font-medium text-blue-700 dark:text-white">Frontend</span>
-                                        <span className="text-sm font-medium text-blue-700 dark:text-white">
-                                            <CountUp start={ 0 } end={ skillPercent.frontend } duration={ 3 } 
-                                                    useEasing={ true } suffix="%" />
-                                        </span>
+                                { Object.keys(skillPercent).map((keyName, i) => (
+                                    <div className="mb-3"> 
+                                        <div className="flex justify-between mb-1">
+                                            <span className="text-base font-medium text-blue-700 dark:text-white">{ keyName }</span>
+                                            <span className="text-sm font-medium text-blue-700 dark:text-white">
+                                                <CountUp start={ 0 } end={ skillPercent[keyName] } duration={ 3 } 
+                                                        useEasing={ true } suffix="%" />
+                                            </span>
+                                            </div>
+                                            <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
+                                            <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.frontend + '%' }}></div>
                                         </div>
-                                        <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
-                                        <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.frontend + '%' }}></div>
                                     </div>
-                                </div>
-                                <div className="mb-3">
-                                    <div className="flex justify-between mb-1">
-                                        <span className="text-base font-medium text-blue-700 dark:text-white">Backend</span>
-                                        <span className="text-sm font-medium text-blue-700 dark:text-white">
-                                            <CountUp start={ 0 } end={ skillPercent.backend } duration={ 3 } 
-                                                    useEasing={ true } suffix="%" />
-                                        </span>
-                                        </div>
-                                        <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
-                                        <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.backend + '%' }}></div>
-                                    </div>
-                                </div>
-                                <div className="mb-3">
-                                    <div className="flex justify-between mb-1">
-                                        <span className="text-base font-medium text-blue-700 dark:text-white">React</span>
-                                        <span className="text-sm font-medium text-blue-700 dark:text-white">
-                                            <CountUp start={ 0 } end={ skillPercent.react } duration={ 3 } 
-                                                    useEasing={ true } suffix="%" />
-                                        </span>
-                                        </div>
-                                        <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
-                                        {/* <AnimationOnScroll animateIn="animate__fadeIn"> */}
-                                        <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.react + '%' }}></div>
-                                        {/* </AnimationOnScroll>  */}
-                                    </div>
-                                </div>
-                                <div className="mb-3">
-                                    <div className="flex justify-between mb-1">
-                                        <span className="text-base font-medium text-blue-700 dark:text-white">Vue</span>
-                                        <span className="text-sm font-medium text-blue-700 dark:text-white">
-                                            <CountUp start={ 0 } end={ skillPercent.vue } duration={ 3 } 
-                                                    useEasing={ true } suffix="%" />
-                                        </span>
-                                        </div>
-                                        <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
-                                        <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.vue + '%' }}></div>
-                                    </div>
-                                </div>
-                                <div className="mb-3">
-                                    <div className="flex justify-between mb-1">
-                                        <span className="text-base font-medium text-blue-700 dark:text-white">React-Native</span>
-                                        <span className="text-sm font-medium text-blue-700 dark:text-white">
-                                        <CountUp start={ 0 } end={ skillPercent.reactNative } duration={ 3 } 
-                                                useEasing={ true } suffix="%" />
-                                        </span>
-                                        </div>
-                                        <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
-                                        <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.reactNative + '%' }}></div>
-                                    </div>
-                                </div>
+                                )) }
                             </div>
                             <div className="mb-10">
                                 <button className=" mr-2 text-gray-100 inline-flex items-center h-10 px-10 transition-colors duration-150 bg-blue-800 rounded-sm focus:shadow-outline hover:bg-blue-700">
@@ -159,7 +111,7 @@ function Skills() {
                     </div>
                     </div>
                     <div className="w-50 flex-1">
-                        <TagCloud />
+                        <TagCloud tags={ tags }/>
                     </div>
                 </div>
             </div>
