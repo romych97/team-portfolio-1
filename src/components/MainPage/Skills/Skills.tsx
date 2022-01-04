@@ -1,7 +1,12 @@
 // import 'animate.css';
 import { useEffect, useState } from 'react';
 
-import TagCloud from '../../../Modules/TagCloud';
+// import TagCloud from '../../../modules/TagCloud';
+// import TagCloud from '../../../modules/TagCloud/index'
+
+const TagCloud = require('TagCloud');
+
+
 import CountUp from 'react-countup';
 
 import { useInView } from 'react-intersection-observer'; 
@@ -12,13 +17,6 @@ const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then
 ) 
 
 function Skills() {
-    
-    const tags = [
-        'JavaScript', 'CSS', 'HTML',
-        'Angualr', 'VueJS', 'React',
-        'Python', 'Go', 'Chrome',
-        'Edge', 'Firefox', 'Safari',
-    ];
 
     const [skillPercent, setSkillPercent] = useState({ 
         frontend: 0,
@@ -34,6 +32,19 @@ function Skills() {
     });
 
     useEffect(() => {
+        const container = '#canvas';
+const texts = [
+    '3D', 'TagCloud', 'JavaScript',
+    'CSS3', 'Animation', 'Interactive',
+    'Mouse', 'Rolling', 'Sphere',
+    '6KB', 'v2.x',
+];
+const options = {};
+
+TagCloud(container, texts, options);
+    }, [])
+
+    useEffect(() => {
         // console.log
         if (inView) {
             console.log('inView')
@@ -47,6 +58,8 @@ function Skills() {
         }
     }, [inView])
 
+    const tagName = ['java', 'javscript', 'C', 'C++', '前端', 'React', 'Vue', 'redux', '写作', '程序员', '编程']
+    const tags = (tagName.join(',') + ',').repeat(2).split(',').filter(t => !!t)
 
     return (
         <div className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen">
@@ -94,7 +107,7 @@ function Skills() {
                                             </span>
                                             </div>
                                             <div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700">
-                                            <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent.frontend + '%' }}></div>
+                                            <div className="transition-progress bg-blue-600 h-1 rounded-full" style={{ width: skillPercent[keyName] + '%' }}></div>
                                         </div>
                                     </div>
                                 )) }
@@ -110,8 +123,8 @@ function Skills() {
                         </div>
                     </div>
                     </div>
-                    <div className="w-50 flex-1">
-                        <TagCloud tags={ tags }/>
+                    <div className="w-50 flex-1" id="canvas">
+{/* <TagCloud /> */}
                     </div>
                 </div>
             </div>
