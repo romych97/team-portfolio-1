@@ -143,7 +143,7 @@ function Portfolio() {
                             
                             { portfolioItems.map((item, i) => {
                                 return (
-                                    <div className="bg-gray-800 shadow-lg rounded p-2">
+                                    <div key={ i } className="bg-gray-800 shadow-lg rounded p-2">
                                         <div className="group relative">
                                         <img className="w-full block rounded" src={ item.img } alt="" />
                                         <div className="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">

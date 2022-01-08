@@ -26,22 +26,24 @@ function Skills() {
         reactNative: 0
     })
     
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
-        threshold: 0,
-    });
+    const { ref, inView, entry } = useInView({ threshold: 0 });
 
     useEffect(() => {
-        const container = '#canvas';
-const texts = [
-    '3D', 'TagCloud', 'JavaScript',
-    'CSS3', 'Animation', 'Interactive',
-    'Mouse', 'Rolling', 'Sphere',
-    '6KB', 'v2.x',
-];
-const options = {};
+        const container = '#tagCloudContainer';
+        const texts = [
+            '3D', 'TagCloud', 'JavaScript',
+            'CSS3', 'Animation', 'Interactive',
+            'Mouse', 'Rolling', 'Sphere',
+            '6KB', 'v2.x',
+        ];
+        const options = {
+            maxSpeed: 'slow',
+            keep: false,
+            radius: 200
+        };
 
-TagCloud(container, texts, options);
+        TagCloud(container, texts, options);
+        
     }, [])
 
     useEffect(() => {
@@ -57,9 +59,6 @@ TagCloud(container, texts, options);
             });
         }
     }, [inView])
-
-    const tagName = ['java', 'javscript', 'C', 'C++', '前端', 'React', 'Vue', 'redux', '写作', '程序员', '编程']
-    const tags = (tagName.join(',') + ',').repeat(2).split(',').filter(t => !!t)
 
     return (
         <div className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen">
@@ -98,7 +97,7 @@ TagCloud(container, texts, options);
                             </div>
                             <div className="mb-10">
                                 { Object.keys(skillPercent).map((keyName, i) => (
-                                    <div className="mb-3"> 
+                                    <div key={ i } className="mb-3"> 
                                         <div className="flex justify-between mb-1">
                                             <span className="text-base font-medium text-blue-700 dark:text-white">{ keyName }</span>
                                             <span className="text-sm font-medium text-blue-700 dark:text-white">
@@ -123,7 +122,7 @@ TagCloud(container, texts, options);
                         </div>
                     </div>
                     </div>
-                    <div className="w-50 flex-1" id="canvas">
+                    <div className="w-50 flex-1" id="tagCloudContainer">
 {/* <TagCloud /> */}
                     </div>
                 </div>

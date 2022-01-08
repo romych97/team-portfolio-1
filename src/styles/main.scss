@@ -21,6 +21,8 @@ body {
 $primary-bg-color: #2953af;
 $secondary-bg-color: #2953af;
 
+$secondary-text-color: #5673b2;
+
 .secondary-bg-color {
   background-color: $secondary-bg-color;
 }
@@ -43,6 +45,13 @@ $secondary-bg-color: #2953af;
 .react-multi-carousel-dot-list {
   position: relative !important;
   margin-top: 0.50rem !important;
+}
+
+// tagCLoud module
+.tagcloud {
+  // color: $secondary-text-color;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 

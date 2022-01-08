@@ -6,7 +6,7 @@ import React, { useEffect } from 'react';
 import MainPage from '../components/MainPage/MainPage'
 import TopMenu from '../components/TopMenu/TopMenu'
 
-import NavigationArrows from '../modules/NavigationArrows/NavigationArrows'
+// import NavigationArrows from '../modules/NavigationArrows/NavigationArrows'
 
 function IndexPage() {
    
@@ -29,7 +29,6 @@ function IndexPage() {
             </div>
           </main>
         </div>
-        <NavigationArrows />
       </div>
     );
   }
