@@ -8,10 +8,7 @@ import Portfolio from './Portfolio/Portfolio'
 import Reviews from './Reviews/Reviews'
 import Skills from './Skills/Skills'
 
-// import NavigationArrows from '../../modules/NavigationArrows/NavigationArrows'
-
 function MainPage() {
-
     
     const [currentView, setCurrentView] = useState(Number);
     
@@ -47,24 +44,6 @@ function MainPage() {
         console.log(currentView, 'currentView')
     }, [currentView])
 
-    function sectionUp() {
-        // currentView <= 1 ? setCurrentView(sections.length) 
-        //                  : setCurrentView(currentView - 1);
-
-        // let el = sections.find(x => x.id == currentView).element;
-        // console.log(el , 'el')
-        // // console.log(sections.find(x => x.id == currentView).element.boundingClientRect.top, 'sections[currentView].ref')
-        // // sections.find(x => x.id == currentView)
-        // setCurrentView(currentView - 1)
-        // return window.scrollTo(-1, el.boundingClientRect.top)
-    }
-    
-    function sectionDown() {
-        // currentView >= sections.length ? setCurrentView(1) 
-        //                  : setCurrentView(currentView + 1)
-        // window.scrollTo(0, sections[currentView + 1].element.boundingClientRect.top)
-    }
-    
     return (
         <div>
 
@@ -91,10 +70,11 @@ function MainPage() {
 
             {/* <NavigationArrows currentView={ currentView } /> */}
             
-            <div style={{ position: 'fixed', bottom: '10px', right: '10px' }}>
+            <div style={{ position: 'fixed', bottom: '35%', right: '10px' }}>
             
                 {/* ARROW UP */}
-                <div onClick={ (e) => sectionUp() } style={{ cursor: 'pointer' }} className="text-gray-100 cursor-pointer">
+                <div onClick={ (e) => currentView <= 1 ? 0 : window.scrollTo(1, sections[currentView - 2].element.target.offsetTop) } 
+                     style={{ cursor: 'pointer' }} className="text-gray-100 cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z" />
                     </svg>
@@ -111,7 +91,8 @@ function MainPage() {
                 }) }
 
                 {/* ARROW DOWN */}
-                <div onClick={ (e) => sectionDown() } style={{ cursor: 'pointer' }} className="text-gray-100">
+                <div onClick={ (e) => currentView >= sections.length ? 0 : window.scrollTo(1, sections[currentView ].element.target.offsetTop) } 
+                     style={{ cursor: 'pointer' }} className="text-gray-100">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z" />
                     </svg>

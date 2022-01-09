@@ -1,6 +1,8 @@
 import 'animate.css';
 import { useEffect } from 'react';
 
+// import AnimationBackground from '../../../modules/AnimationBackground/index'
+
 import dynamic from 'next/dynamic'
 const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then(mod => mod.AnimationOnScroll),
     { ssr: false }
@@ -8,13 +10,16 @@ const AnimationOnScroll = dynamic(() => import('react-animation-on-scroll').then
 
 function About(props:any) {
 
-    // useEffect(() => {
-    //     props.executeScroll()
-    // }, [])
+    useEffect(() => {
+
+    }, [])
       
     return (
         <div className="z-30 max-w-container mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-9 xl:pt-20 pb-16 min-h-screen flex items-center">
             <div>
+                {/* <AnimationBackground /> */}
+                <div id="container2"></div>
+                {/* <div id="canvas"></div> */}
                 <div className="flex mb-3">
                     <div>
                         <AnimationOnScroll offset={ 0 } delay={0} animateOnce={true} animateIn="animate__bounceInLeft">

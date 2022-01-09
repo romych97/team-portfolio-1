@@ -39,6 +39,57 @@ function Contacts() {
                                 </h3>
                             </div>
                         </div>
+                        <div className="mb-5">
+
+          <div className=" mx-auto">
+            <div className="flex flex-wrap -m-2">
+              <div className="p-2 w-1/2">
+                <div className="relative">
+                  <label for="name" className="leading-7 text-sm text-gray-600">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-1/2">
+                <div className="relative">
+                  <label
+                    for="email"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    for="message"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  ></textarea>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
                         <div className="mb-10">
                             <button className=" mr-2 text-gray-100 inline-flex items-center h-10 px-10 transition-colors duration-150 bg-blue-800 rounded-sm focus:shadow-outline hover:bg-blue-700">
                                 <span>Send message</span>
